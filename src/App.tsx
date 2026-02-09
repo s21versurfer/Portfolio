@@ -20,8 +20,25 @@ import img2 from "./assets/_MG_1959.jpg";
 import img3 from "./assets/_MG_2027.jpg";
 import img4 from "./assets/_MG_2039-2.jpg";
 import img5 from "./assets/_MG_1903.jpg";
-import col from "./assets/colhan.png"
-import mm from "./assets/mm.png"
+import col from "./assets/colhan.png";
+import mm from "./assets/mm.png";
+import po from "./assets/po.png";
+import wo from "./assets/wo.png";
+import dr from "./assets/dr.png";
+import ru from "./assets/ru.png";
+import ki from "./assets/ki.png";
+import dte from "./assets/dte.png";
+import nuvlog from "./assets/nuvlog.png";
+import st1 from "./assets/stiss1.png";
+import st2 from "./assets/stiss2.png";
+
+import st22 from "./assets/st2.png";
+
+import st11 from "./assets/st1.png";
+
+import nu2 from "./assets/nu2.png";
+
+
 
 
 export default function App() {
@@ -31,32 +48,34 @@ export default function App() {
   const selectedWorks = [
     {
       id: 1,
-      title: "Urban Perspectives",
+      title: "Shelter line no.2",
       category: "Photography",
-      year: "2025",
+      year: "2023",
       image: img1
     },
     {
       id: 2,
-      title: "Commerce Platform Redesign",
-      category: "Web Design",
+      title: "Collectif Han",
+      category: "Web Development",
       year: "2024",
      image: colhan
      
     },
     {
       id: 3,
-      title: "Analytics Dashboard",
-      category: "Web Development",
-      year: "2024",
-      image: news
+            title: "NU Vlog",
+      category: "Video",
+      year: "2025",
+      image: vlog
+
     },
     {
       id: 4,
-      title: "Quarterly Magazine",
+            title: "TheSeoulTech",
       category: "Editorial",
-      year: "2025",
-      image: vlog
+      year: "2024",
+      image: news
+
     },
   ];
 
@@ -90,22 +109,20 @@ export default function App() {
   const webDesignProjects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Down to Earth",
       description:
-        "Complete redesign of a fashion retail platform focusing on visual storytelling and seamless checkout experience.",
-      tools: ["Figma", "Prototyping", "Design Systems"],
-      image:
-        "https://images.unsplash.com/photo-1758598303946-385680e4eabd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBpbnRlcmZhY2UlMjBtb2NrdXB8ZW58MXx8fHwxNzcwMzMyODgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "Future oriented social media with healthy sustainable concept.",
+      tools: ["Figma"],
+      image:dte,
       year: "2024",
     },
     {
       id: 2,
-      title: "Portfolio System",
+      title: "Kinside",
       description:
-        "Modular portfolio template system for creative professionals with emphasis on typography and white space.",
-      tools: ["Sketch", "Adobe XD", "User Research"],
-      image:
-        "https://images.unsplash.com/photo-1576057122708-9608db46b2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwd29ya3NwYWNlJTIwbGFwdG9wfGVufDF8fHx8MTc3MDM0Njk0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "Localized global community/language exchange app.",
+      tools: ["Figma"],
+      image:ki,
       year: "2025",
     },
   ];
@@ -113,9 +130,9 @@ export default function App() {
   const webDevProjects = [
     {
       id: 1,
-      title: "Real-Time Analytics Dashboard",
+      title: "Collectif Han",
       purpose:
-        "Built a comprehensive analytics platform with real-time data visualization and custom reporting tools.",
+        "Interactive website for group introduction.",
       stack: [
         "React",
         "TypeScript",
@@ -130,9 +147,9 @@ export default function App() {
     },
     {
       id: 2,
-      title: "Content Management System",
+      title: "Mate Match",
       purpose:
-        "Custom CMS built for editorial teams with focus on collaboration and version control.",
+        "Roomate matching app with safety features.",
       stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
       image: mm,
   
@@ -140,97 +157,108 @@ export default function App() {
       link: "#",
     },
         {
-      id: 2,
-      title: "Content Management System",
+      id: 3,
+      title: "Popcode",
       purpose:
-        "Custom CMS built for editorial teams with focus on collaboration and version control.",
+        "Coding education website for beginners.",
       stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: mm,
+      image: po,
   
       year: "2025",
       link: "#",
     },
         {
-      id: 2,
-      title: "Content Management System",
+      id: 4,
+      title: "World Web",
       purpose:
-        "Custom CMS built for editorial teams with focus on collaboration and version control.",
+        "Website visualizing global economy level and cultural engagement.",
       stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: mm,
+      image: wo,
   
       year: "2025",
       link: "#",
     },
+            {
+      id: 5,
+      title: "Rupture",
+      purpose:
+        "Resturant reservation website.",
+      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+      image: ru,
+  
+      year: "2025",
+      link: "#",
+    },
+            {
+      id: 4,
+      title: "Drawing App",
+      purpose:
+        "Drawing editor with diverse functions.",
+      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+      image: dr,
+  
+      year: "2025",
+      link: "#",
+    }
   ];
 
   const videos = [
     {
       id: 1,
-      title: "Seoul After Dark",
+      title: "ITM Northumbria University Vlog",
       role: "Director, Cinematographer",
       achievement:
-        "Official Selection - Seoul Film Festival 2024",
-      thumbnail:
-        "https://images.unsplash.com/photo-1767164035513-1f4e8f19e491?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWElMjB2aWRlb2dyYXBoeXxlbnwxfHx8fDE3NzAzNjA3MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "3rd prize on ITM vlog competition",
+      thumbnail:nuvlog,
       year: "2024",
     },
     {
       id: 2,
-      title: "Design Process Documentary",
-      role: "Producer, Editor",
-      thumbnail:
-        "https://images.unsplash.com/photo-1768885513772-2963bd07ec93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudGFyeSUyMGZpbG18ZW58MXx8fHwxNzcwMjkzNzU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      year: "2025",
+   
+      thumbnail:nu2,
+
     },
     {
       id: 3,
-      title: "Brand Identity Film",
+      title: "2022 STISS Mubflat Tour Vlog",
       role: "Creative Director",
-      achievement: "Vimeo Staff Pick",
-      thumbnail:
-        "https://images.unsplash.com/photo-1691180273080-aacef51379d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaWxtJTIwcHJvZHVjdGlvbiUyMGNhbWVyYXxlbnwxfHx8fDE3NzAyNzMwNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      year: "2024",
+      
+      thumbnail:st1,
+      year: "2022",
     },
     {
       id: 4,
-      title: "Motion Typography Reel",
-      role: "Motion Designer",
-      thumbnail:
-        "https://images.unsplash.com/photo-1616397325279-e7bb752d0e28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwYXJjaGl0ZWN0dXJlJTIwdGV4dHVyZXxlbnwxfHx8fDE3NzAzNjA2Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      year: "2025",
+
+      thumbnail:st11,
+    
+    },
+        {
+      id: 3,
+      title: "2022 STISS Main Video",
+      role: "Creative Director",
+   
+      thumbnail:st2,
+      year: "2022",
+    },
+    {
+      id: 4,
+
+      thumbnail:st22,
+
     },
   ];
 
   const editorialProjects = [
     {
       id: 1,
-      title: "Quarterly Design Magazine",
-      type: "Magazine",
-      description:
-        "A 120-page publication exploring the intersection of design, technology, and culture. Art directed and designed all editorial layouts with focus on typographic hierarchy.",
-      image: news,
-      year: "2025",
-    },
-    {
-      id: 2,
-      title: "Photography Annual",
-      type: "Book",
-      description:
-        "Annual photography collection featuring works from emerging Asian photographers. Designed with generous margins and careful attention to image sequencing.",
-      image:
-        "https://images.unsplash.com/photo-1660251406411-589fa0b05604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHdoaXRlJTIwcGhvdG9ncmFwaHklMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzAzNjA2Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      year: "2024",
-    },
-    {
-      id: 3,
-      title: "Architecture Newspaper",
+      title: "TherSeoulTech",
       type: "Newspaper",
       description:
-        "Monthly newspaper documenting contemporary architecture in Seoul. Tabloid format with modular grid system allowing for flexible content layouts.",
-      image:
-        "https://images.unsplash.com/photo-1616397325279-e7bb752d0e28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwYXJjaGl0ZWN0dXJlJTIwdGV4dHVyZXxlbnwxfHx8fDE3NzAzNjA2Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      year: "2024",
+        "The SeoulTech is the official English-language newspaper of Seoul National University of Science and Technology (SeoulTech).It delivers a wide range of content covering campus news, university announcements, and student life, as well as major social and global issues. In addition, The SeoulTech introduces Korean culture and contemporary topics to an international audience, serving as a bridge between SeoulTech and the global community. Through accurate reporting and thoughtful analysis, the newspaper aims to foster cross-cultural understanding and provide reliable information to both members of the university and readers beyond campus.",
+      image: news,
+      year: "2022-2024",
     },
+   
   ];
 
   const handleWorkClick = (category: string) => {

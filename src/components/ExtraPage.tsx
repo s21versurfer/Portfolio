@@ -5,22 +5,22 @@ export function ExtraPage() {
   const links = [
     {
       platform: 'Instagram',
-      username: '@eungyeolkim',
-      url: 'https://instagram.com',
+      username: '@sillaboratory / @silverconquertheearth',
+      url: 'https://www.instagram.com/sillaboratory/',
       icon: Instagram,
       description: 'Visual diary and behind-the-scenes'
     },
     {
       platform: 'YouTube',
-      username: 'Eungyeol Kim',
-      url: 'https://youtube.com',
+      username: 'Earth Conquest',
+      url: 'https://www.youtube.com/@theearthconquest',
       icon: Youtube,
       description: 'Video projects and tutorials'
     },
     {
       platform: 'GitHub',
-      username: 'eungyeolkim',
-      url: 'https://github.com',
+      username: 's21versurfer',
+      url: 'https://github.com/s21versurfer/HelloMyWorld',
       icon: Github,
       description: 'Open source work and code'
     }
