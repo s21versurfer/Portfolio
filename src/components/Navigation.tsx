@@ -10,8 +10,8 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
     'Home',
     'About',
     'Photography',
-    'Web Design',
-    'Web Development',
+    'Projects',
+    'Development',
     'Video',
     'Editorial',
     'Extra'

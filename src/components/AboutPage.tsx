@@ -1,147 +1,251 @@
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 import profileImg from "../assets/profile.jpg";
+import "./about-patch.css"; // ← CSS 파일 import
 
-interface ProfileImageProps {
-  src: string;
-  alt?: string;
-  className?: string;
-  width?: number | string; // 너비만 조절하도록 변경 (높이는 자동으로 비율 유지)
-  offsetLeft?: number | string;
-  offsetBottom?: number | string; 
-}
+// ─── Sub-components ────────────────────────────────────────────────────────────
 
-// ProfileImage 컴포넌트 수정
-export function ProfileImage({
-  src,
-  alt = "profile",
-  className = "",
-  width = 80,
-  offsetLeft = 60,
-  offsetBottom = 30,
-}: ProfileImageProps) {
-  const widthStyle =
-    typeof width === "number" ? { width: `${width}px` } : { width };
+const Badge = ({
+  children,
+  highlight = false,
+}: {
+  children: React.ReactNode;
+  highlight?: boolean;
+}) => (
+  <span className={`badge${highlight ? " highlight" : ""}`}>{children}</span>
+);
 
-const offsetStyle = {
-  marginLeft:
-    typeof offsetLeft === "number" ? `${offsetLeft}px` : offsetLeft,
-  marginBottom:
-    typeof offsetBottom === "number" ? `${offsetBottom}px` : offsetBottom,
-};
+const Tag = ({ children }: { children: React.ReactNode }) => (
+  <span className="tag">{children}</span>
+);
 
-  return (
-    <div style={offsetStyle}>
-      <motion.img
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        src={src}
-        alt={alt}
-        style={{ ...widthStyle, height: "auto" }}
-        className={className}
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <p className="section-title">{children}</p>
+);
 
-              />
+const Item = ({
+  title,
+  badges = [],
+  tags = [],
+  children,
+}: {
+  title: string;
+  badges?: { label: string; highlight?: boolean }[];
+  tags?: string[];
+  children?: React.ReactNode;
+}) => (
+  <div className="item">
+    <div className="item-header">
+      <span className="item-title">{title}</span>
+      {badges.map((b, i) => (
+        <Badge key={i} highlight={b.highlight}>
+          {b.label}
+        </Badge>
+      ))}
     </div>
-  );
-}
+    {children && <p className="item-desc">{children}</p>}
+    {tags.length > 0 && (
+      <div className="tag-row">
+        {tags.map((t) => <Tag key={t}>{t}</Tag>)}
+      </div>
+    )}
+  </div>
+);
+
+const Section = ({ children }: { children: React.ReactNode }) => (
+  <div className="section">{children}</div>
+);
+
+// ─── AboutPage ─────────────────────────────────────────────────────────────────
 
 export function AboutPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <h2 className="mt-4 text-xl font-medium">About</h2>
+    <div className="about-page">
 
-        
-        {/* 수정된 ProfileImage 사용 (여기서 width 조절 가능) */}
-        {/* width를 픽셀 단위 숫자로 주면 됩니다. */}
-        <ProfileImage 
-          src={profileImg} 
-          width={300} // 여기서 숫자를 바꾸면 너비가 변하고 높이는 비율에 맞춰 자동 조절됩니다.
-          className="grayscale hover:grayscale-0 transition-all duration-300 ml-100" 
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="mb-8">About</h2>
+
+        <motion.img
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          src={profileImg}
+          alt="profile"
+          className="about-photo grayscale hover:grayscale-0 transition-all duration-700"
         />
-        {/* 또는 Tailwind CSS 클래스로도 지정할 수 있습니다. */}
-        {/* <ProfileImage 
-          src={profileImg} 
-          width="w-40" // w-40 클래스로 너비를 지정하면 height는 자동으로 맞춰집니다.
-          className="grayscale hover:grayscale-0 transition-all duration-300" 
-        /> */}
 
-      <p>
-        I am an undergraduate student majoring in Information Technology Management
-        at Seoul National University of Science and Technology (SeoulTech), with a
-        strong focus on frontend engineering and user-centered software development.
-        My background combines computer science fundamentals with business and
-        communication skills, enabling me to contribute effectively in collaborative,
-        product-oriented teams.
-      </p>
+        <div className="about-bio">
+          <a
+            href="https://www.linkedin.com/in/eungyeol-kim-83aab4294/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn →
+          </a>
+          <p>
+            I am an undergraduate student majoring in Information Technology
+            Management at Seoul National University of Science and Technology
+            (SeoulTech). My interests lie at the intersection of technology,
+            data, business, and global communication.
+          </p>
+          <p>
+            Through software development, data analytics, international
+            leadership, and content creation experiences, I have developed a
+            multidisciplinary perspective that helps me understand both products
+            and people.
+          </p>
+          <p>
+            I aspire to become a global business professional who bridges
+            technology and markets by transforming ideas into meaningful user
+            experiences.
+          </p>
+        </div>
+      </motion.div>
 
-      <div className="pt-6 flex flex-col gap-4 m-22">
-        <h3 className="text-base font-medium opacity-80">
-          Frontend & Technical Experience
-        </h3>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
 
-      </div>
+        <Section>
+          <SectionTitle>Global Experience</SectionTitle>
+          <Item title="Exchange Student — INSA Toulouse" badges={[{ label: "France · 2024–2025" }]}>
+            Studied engineering in a multicultural environment; gained hands-on
+            exposure to European consumer culture, communication styles, and
+            international collaboration.
+          </Item>
+          <Item title="Double Degree Program — Northumbria University" badges={[{ label: "UK" }]}>
+            Completed coursework and team projects in English, collaborating
+            with students from diverse academic and cultural backgrounds.
+          </Item>
+          <Item title="Volunteer — SeoulTech International Summer School (STISS)">
+            Assisted international students, coordinated campus activities, and
+            developed cross-cultural communication skills.
+          </Item>
+        </Section>
 
-      <p>
-        <strong>Frontend Developer, Google Developer Group on Campus (2025–Present)</strong>
-      </p>
-      
-      <ul className="list-disc pl-5 space-y-2">
-        <li>Learned and applied React and Tailwind CSS in team-based projects</li>
-        <li>Contributed to a web-based archiving platform for group members and activities</li>
-        <li>Implemented the main page and profile page frontend</li>
-        <li>Focused on component-based UI design, responsive layouts, and code consistency</li>
-        <li>Collaborated with teammates using Git/GitHub workflows</li>
-      </ul>
+        <Section>
+          <SectionTitle>Data & AI Experience</SectionTitle>
+          <Item title="Big Data Analytics Project" tags={["Hadoop", "Spark", "Python"]}>
+            Analyzed relationships between GDP, welfare, cultural indicators,
+            and national happiness indexes.
+          </Item>
+          <Item
+            title="Machine Learning Project — Color Recognition for Color-Blind Users"
+            badges={[{ label: "2nd Place", highlight: true }]}
+          >
+            Developed a color-recognition system using machine learning
+            techniques; achieved 2nd place in project evaluation.
+          </Item>
+          <Item title="Data Analysis & Modeling" tags={["Python", "EDA", "Visualization"]}>
+            Experience with CSV processing, exploratory data analysis,
+            visualization, and predictive modeling.
+          </Item>
+        </Section>
 
-      <p className="text-sm font-mono bg-gray-100 p-2 rounded">
-        Programming: Python, Java, C, SQL, HTML, CSS, JavaScript
-      </p>
+        <Section>
+          <SectionTitle>Content Creation & Marketing</SectionTitle>
+          <Item title="Multicultural Content — Instagram & YouTube">
+            Produced content featuring Korean culture and daily life with
+            international students. One short-form video reached{" "}
+            <strong>2.7M+ views</strong> through organic engagement.
+          </Item>
+          <Item title="Social Media Performance Analysis">
+            Analyzed engagement metrics and improved content strategies based
+            on audience feedback.
+          </Item>
+          <Item title="Amorepacific Brand Challenge">
+            Researched global beauty trends and consumer behavior to develop
+            branding strategies.
+          </Item>
+        </Section>
 
+        <Section>
+          <SectionTitle>Photography & Media</SectionTitle>
+          <Item title="Photography Projects">
+            Worked for fashion brand <strong>Ceritaunnie</strong> and hip-hop
+            label <strong>Maximum Quality</strong>. Planned and executed
+            concept-based photo shoots emphasizing storytelling and audience
+            engagement.
+          </Item>
+        </Section>
 
-  <p>
-    Academic projects include a coding practice website for beginner programmers,
-    a Java-based drawing application supporting shape creation, color control,
-    and group editing, and coursework grounded in data structures, algorithms,
-    and software design fundamentals.
-  </p>
+        <Section>
+          <SectionTitle>Awards & Achievements</SectionTitle>
+          <Item title="Bronze Prize — SeoulTech IT Service Competition">
+            Designed a service concept addressing algorithm-driven confirmation bias.
+          </Item>
+          <Item
+            title="2nd Place — Machine Learning Project Evaluation"
+            badges={[{ label: "2nd Place", highlight: true }]}
+          >
+            Color Recognition System for Color-Blind Users.
+          </Item>
+          <Item title="2.7M+ Views — Instagram Reel">
+            Organic reach introducing Korean culture to international audiences.
+          </Item>
+        </Section>
 
-  <h3 className="text-base font-medium opacity-80 pt-6">
-    Leadership & Collaboration
-  </h3>
+        <Section>
+          <SectionTitle>Frontend & Technical Experience</SectionTitle>
+          <Item
+            title="Frontend Developer — Google Developer Group on Campus"
+            badges={[{ label: "2025–Present" }]}
+            tags={["React", "Tailwind CSS", "Git"]}
+          >
+            Built a web-based archiving platform; implemented main page and
+            profile page frontend. Focused on component-based UI, responsive
+            layouts, and code consistency. Collaborated using Git/GitHub workflows.
+          </Item>
+          <Item title="Academic Projects">
+            Coding practice website for beginner programmers; Java-based drawing
+            application with shape creation, color control, and group editing.
+            Coursework in data structures, algorithms, and software design.
+          </Item>
+          <div style={{ paddingTop: "0.75rem" }}>
+            <p style={{ fontSize: "0.7rem", opacity: 0.4, marginBottom: "0.5rem" }}>
+              Programming languages & tools
+            </p>
+            <div className="tag-row">
+              {["Python", "Java", "C", "SQL", "HTML", "CSS", "JavaScript"].map(
+                (t) => <Tag key={t}>{t}</Tag>
+              )}
+            </div>
+          </div>
+        </Section>
 
-  <ul className="list-disc pl-5 space-y-2">
-    <li>
-      <strong>President, International Students Club</strong> — Led an organization
-      of 200+ members in a multicultural environment and coordinated cross-cultural
-      collaboration.
-    </li>
-    <li>
-      <strong>STEM (SeoulTech Encouraging Mentor)</strong> — Provided university
-      admissions counseling and academic planning support to high school students.
-    </li>
-    <li>
-      <strong>Public Relations Officer, IT Management Student Council</strong> —
-      Planned student-focused events and created online promotional content.
-    </li>
-  </ul>
+        <Section>
+          <SectionTitle>Leadership & Collaboration</SectionTitle>
+          <Item title="President — International Students Club">
+            Led an organization of 200+ members in a multicultural environment;
+            coordinated cross-cultural collaboration.
+          </Item>
+          <Item title="STEM — SeoulTech Encouraging Mentor">
+            Provided university admissions counseling and academic planning
+            support to high school students.
+          </Item>
+          <Item title="Public Relations Officer — IT Management Student Council">
+            Planned student-focused events and created online promotional content.
+          </Item>
+        </Section>
 
-  <h3 className="text-base font-medium opacity-80 pt-6">
-    Communication Experience
-  </h3>
+        <Section>
+          <SectionTitle>Communication Experience</SectionTitle>
+          <Item title="Reporter — SeoulTech English Press" badges={[{ label: "2022–2024" }]}>
+            Wrote English articles on campus life, culture, and international
+            student issues. Produced card-news content for Instagram.
+          </Item>
+          <Item title="English Tutor" badges={[{ label: "2023–Present" }]}>
+            Conducted one-on-one business English sessions, designed teaching
+            materials, and provided structured feedback.
+          </Item>
+        </Section>
 
-  <ul className="list-disc pl-5 space-y-2">
-    <li>
-      <strong>Reporter, SeoulTech English Press (2022–2024)</strong> — Wrote English
-      articles on campus life, culture, and international student issues, and
-      produced card-news content for Instagram.
-    </li>
-    <li>
-      <strong>English Tutor (2023–Present)</strong> — Conducted one-on-one business
-      English sessions, designed teaching materials, and provided structured feedback.
-    </li>
-  </ul>
-
-
-      {/* 이하 생략 (Leadership, Communication 섹션) */}
+      </motion.div>
     </div>
   );
 }

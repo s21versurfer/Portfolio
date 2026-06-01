@@ -28,6 +28,16 @@ import dr from "./assets/dr.png";
 import ru from "./assets/ru.png";
 import ki from "./assets/ki.png";
 import dte from "./assets/dte.png";
+import mystik from "./assets/mystik.png";
+import amore from "./assets/amore.png";
+import invest from "./assets/invest.png";
+import gc from "./assets/gc.png";
+import ex from "./assets/ex.png";
+import posture from "./assets/posture.png";
+import colorblind from "./assets/colorblind.png";
+import paris from "./assets/paris.png";
+import gdg from "./assets/gdg.png";
+import hangman from "./assets/hangman.png";
 import nuvlog from "./assets/nuvlog.png";
 import st1 from "./assets/stiss1.png";
 import st2 from "./assets/stiss2.png";
@@ -56,7 +66,7 @@ export default function App() {
     {
       id: 2,
       title: "Collectif Han",
-      category: "Web Development",
+      category: "Development",
       year: "2024",
      image: colhan
      
@@ -106,102 +116,192 @@ export default function App() {
     },
   ];
 
-  const webDesignProjects = [
+ const webDesignProjects = [
+  {
+    id: 1,
+    title: "Down to Earth",
+    description:
+      "Award-winning social media service concept designed to reduce algorithm-driven confirmation bias and promote healthier digital interaction.",
+    tools: ["Figma", "Service Design", "UX Research"],
+    image: dte,
+    year: "2024",
+    link: "https://github.com/s21versurfer/HelloMyWorld/blob/main/IT%20Service%20Competetion/Social%20Media%20Stadistics%20Thesis%20by%20Slidesgo.pdf",
+  },
+  {
+    id: 2,
+    title: "Kinside",
+    description:
+      "Korean culture recommendation and localized community service for global users interested in Korean lifestyle, travel, and cultural experiences.",
+    tools: ["Figma", "Product Planning", "Global Marketing"],
+    image: ki,
+    year: "2025",
+    link: "https://docs.google.com/presentation/d/1PfijAtOK3YgJr8VsvnC0wNfbw3mtcMseCEeWYAhyCi0/edit?slide=id.p1#slide=id.p1",
+  },
+  {
+    id: 3,
+    title: "MysticK Night",
+    description:
+      "Korean-French cultural festival proposal for the 140th anniversary of France–Korea diplomatic relations, combining Korean folklore, occult themes, K-culture, and immersive pop-up experiences.",
+    tools: ["Event Planning", "Branding", "AI Image Generation", "Cross-Cultural Strategy"],
+    image: mystik,
+    year: "2025",
+    link: "https://drive.google.com/file/d/1twtT6RnISpjTtSSlJrMns0vkb71O1pIN/view?usp=sharing",
+  },
+  {
+    id: 4,
+    title: "Amorepacific Brand Challenge",
+    description:
+      "Global beauty branding strategy for Innisfree, focusing on mindful beauty, healthy self-expression, Gen Z insights, and participatory brand experiences.",
+    tools: ["Brand Strategy", "Consumer Research", "Marketing Planning"],
+    image: amore,
+    year: "2026",
+    link: "https://drive.google.com/file/d/1K8YYhClD_70tMoN0wsoMOSInOdqNgSUG/view?usp=sharing",
+  },
+  {
+    id: 5,
+    title: "Investment Analysis",
+    description:
+      "Financial and investment analysis project using market indicators and business data to derive strategic insights.",
+    tools: ["Data Analysis", "Business Research", "Financial Analysis"],
+    image: invest,
+    year: "2025",
+    link: "https://docs.google.com/presentation/d/1PqF9FAyYy9veqgqGv-ZlB26_2y90TMQ9xH3DFVxjhdA/edit?usp=sharing",
+  },
+  {
+    id: 6,
+    title: "Global Challenger",
+    description:
+      "Research project on no-code and low-code technology trends, analyzing their business impact and potential for digital transformation.",
+    tools: ["Research", "Technology Analysis", "Business Strategy"],
+    image: gc,
+    year: "2024",
+    link: "https://github.com/s21versurfer/HelloMyWorld/blob/main/Global%20Challenger/nocodelowcode%20research.pdf",
+  },
+  {
+    id: 7,
+    title: "Ex-Track",
+    description:
+      "Career experience tracking platform concept designed to help students organize extracurricular activities and career development records.",
+    tools: ["Product Planning", "UX Design", "Service Strategy"],
+    image: ex,
+    year: "2024",
+    link: "https://github.com/s21versurfer/HelloMyWorld/blob/main/IT%20Service%20Competetion/%ED%94%84%EB%A0%88%EC%A0%A0%ED%85%8C%EC%9D%B4%EC%85%98%201.pdf",
+  },
+  {
+    id: 8,
+    title: "Posture Correction System",
+    description:
+      "Data mining project analyzing posture-related data and proposing a system for posture improvement and health-oriented feedback.",
+    tools: ["Data Mining", "Python", "Analytics"],
+    image: posture,
+    year: "2024",
+    link: "https://github.com/s21versurfer/HelloMyWorld/blob/main/data%20mining/Data%20Mining.pdf",
+  },
     {
-      id: 1,
-      title: "Down to Earth",
-      description:
-        "Future oriented social media with healthy sustainable concept.",
-      tools: ["Figma"],
-      image:dte,
-      year: "2024",
-    },
-    {
-      id: 2,
-      title: "Kinside",
-      description:
-        "Localized global community/language exchange app.",
-      tools: ["Figma"],
-      image:ki,
-      year: "2025",
-    },
-  ];
+    id: 9,
+    title: "AI for Colorblind",
+    purpose:
+      "Machine learning-based color recognition system designed to support colorblind users through accessible color classification.",
+    tools: ["Python", "Machine Learning", "Data Processing"],
+    image: colorblind,
+    year: "2024",
+    link: "https://docs.google.com/presentation/d/1Z2F4KrCXfWscN00qsamR9KyOEEyG7rUR80bIF8ImzGI/edit?usp=sharing",
+  },
+];
 
-  const webDevProjects = [
-    {
-      id: 1,
-      title: "Collectif Han",
-      purpose:
-        "Interactive website for group introduction.",
-      stack: [
-        "React",
-        "TypeScript",
-        "D3.js",
-        "Node.js",
-        "PostgreSQL",
-      ],
-      image: col,
+ const webDevProjects = [
+  {
+    id: 1,
+    title: "Collectif Han",
+    purpose:
+      "Interactive website for introducing a Korean-French cultural collective and supporting cultural event branding.",
+    stack: ["React", "TypeScript", "D3.js", "Node.js", "PostgreSQL"],
+    image: col,
+    year: "2024",
+    link: "https://drive.google.com/file/d/1twtT6RnISpjTtSSlJrMns0vkb71O1pIN/view?usp=sharing",
+  },
+  {
+    id: 2,
+    title: "Mate Match",
+    purpose:
+      "Roommate matching app based on lifestyle compatibility, dormitory preferences, and safety-oriented matching features.",
+    stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+    image: mm,
+    year: "2025",
+    link: "https://github.com/han3o1/MateMatch",
+  },
+  {
+    id: 3,
+    title: "Popcode",
+    purpose:
+      "Coding education website for beginners, designed to support structured programming practice and user-friendly learning flow.",
+    stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+    image: po,
+    year: "2025",
+    link: "https://docs.google.com/presentation/d/1Jalt1F8wE_KSWxxg8olA-jkVDGZRZQDmlEOY6or_67A/edit?usp=sharing",
+  },
+  {
+    id: 4,
+    title: "World Web",
+    purpose:
+      "Website visualizing global economic levels and cultural engagement through interactive information design.",
+    stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+    image: wo,
+    year: "2025",
+    link: "https://docs.google.com/presentation/d/1gY_1dGjmc5wVr2jO-Mm8GgsNqptnUtu_/edit?slide=id.g3ae15bca6d2_0_78#slide=id.g3ae15bca6d2_0_78",
+  },
+  {
+    id: 5,
+    title: "Rupture",
+    purpose:
+      "Restaurant reservation website focused on digital booking flow and user-friendly service experience.",
+    stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
+    image: ru,
+    year: "2025",
+    link: "https://kimsilverwave.github.io/",
+  },
+  {
+    id: 6,
+    title: "Drawing App",
+    purpose:
+      "Java-based drawing editor supporting shape creation, color control, object editing, and GUI interaction.",
+    stack: ["Java", "OOP", "GUI"],
+    image: dr,
+    year: "2024",
+    link: "https://github.com/s21versurfer/HelloMyWorld/tree/main/Programming/Darwing%20Editor",
+  },
 
-      year: "2024",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Mate Match",
-      purpose:
-        "Roomate matching app with safety features.",
-      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: mm,
-  
-      year: "2025",
-      link: "#",
-    },
-        {
-      id: 3,
-      title: "Popcode",
-      purpose:
-        "Coding education website for beginners.",
-      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: po,
-  
-      year: "2025",
-      link: "#",
-    },
-        {
-      id: 4,
-      title: "World Web",
-      purpose:
-        "Website visualizing global economy level and cultural engagement.",
-      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: wo,
-  
-      year: "2025",
-      link: "#",
-    },
-            {
-      id: 5,
-      title: "Rupture",
-      purpose:
-        "Resturant reservation website.",
-      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: ru,
-  
-      year: "2025",
-      link: "#",
-    },
-            {
-      id: 4,
-      title: "Drawing App",
-      purpose:
-        "Drawing editor with diverse functions.",
-      stack: ["Next.js", "Prisma", "TailwindCSS", "Supabase"],
-      image: dr,
-  
-      year: "2025",
-      link: "#",
-    }
-  ];
-
+  {
+    id: 7,
+    title: "C'est Paris",
+    purpose:
+      "AI-powered cultural adventure game inspired by exchange student experiences in France, featuring personalized gameplay and cultural storytelling.",
+    stack: ["Game Development", "AI Personalization", "Unity","VR"],
+    image: paris,
+    year: "2025",
+    link: "https://github.com/TPRPT/Cest-Paris",
+  },
+  {
+    id: 8,
+    title: "GDG Homepage",
+    purpose:
+      "Google Developer Group homepage project for archiving members, activities, and group information.",
+    stack: ["React", "TailwindCSS", "Git", "GitHub"],
+    image: gdg,
+    year: "2025",
+    link: "https://github.com/yeongJD/GDG_Homepage_Team2",
+  },
+  {
+    id: 9,
+    title: "Hangman",
+    purpose:
+      "Web-based Hangman word game implemented with basic frontend technologies.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: hangman,
+    year: "2024",
+    link: "https://github.com/s21versurfer/webprogramming",
+  },
+];
   const videos = [
     {
       id: 1,
@@ -233,7 +333,7 @@ export default function App() {
     
     },
         {
-      id: 3,
+      id: 5,
       title: "2022 STISS Main Video",
       role: "Creative Director",
    
@@ -241,7 +341,7 @@ export default function App() {
       year: "2022",
     },
     {
-      id: 4,
+      id: 6,
 
       thumbnail:st22,
 
@@ -282,9 +382,9 @@ export default function App() {
         return <AboutPage />;
       case "Photography":
         return <PhotographyPage photos={photos} />;
-      case "Web Design":
+      case "Projects":
         return <WebDesignPage projects={webDesignProjects} />;
-      case "Web Development":
+      case "Development":
         return <WebDevelopmentPage projects={webDevProjects} />;
       case "Video":
         return <VideoPage videos={videos} />;

@@ -1099,5 +1099,5 @@ a {
 }
 
 body {
-  outline: 10px solid red !important;
+  outline: 10px solid rgb(179, 212, 240) !important;
 }

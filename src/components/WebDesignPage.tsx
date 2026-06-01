@@ -22,7 +22,7 @@ export function WebDesignPage({ projects }: WebDesignPageProps) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-4">Web Design</h2>
+          <h2 className="mb-4">Projects</h2>
           <p className="text-sm opacity-40 mb-16">Interface & Experience</p>
 
           <div className="space-y-24">
