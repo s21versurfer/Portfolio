@@ -7,6 +7,7 @@ interface WebProject {
   tools: string[];
   image: string;
   year: string;
+  link?: string;
 }
 
 interface WebDesignPageProps {
@@ -58,6 +59,22 @@ export function WebDesignPage({ projects }: WebDesignPageProps) {
                       <p className="text-xs opacity-40 mb-2 tracking-wider uppercase">Year</p>
                       <p className="text-sm">{project.year}</p>
                     </div>
+                    {project.link && (
+  <div>
+    <p className="text-xs opacity-40 mb-2 tracking-wider uppercase">
+ 
+    </p>
+
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-sm border-b border-[var(--color-text)] hover:opacity-60 transition-opacity"
+                        >
+                          View Project →
+                        </a>
+  </div>
+)}
                   </div>
                 </div>
               </motion.div>
